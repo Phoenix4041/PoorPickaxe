@@ -103,14 +103,17 @@ PoorPickaxe/
     └── PoorPickaxe/
         ├── Loader.php
         ├── item/
-        │   └── PoorPickaxeItem.php
+        │   └── HammerItem.php
         ├── manager/
         │   ├── ConfigManager.php
         │   └── MiningManager.php
         ├── listener/
         │   └── BlockBreakListener.php
-        └── task/
-            └── DelayedBreakTask.php
+        └── command/
+        │   ├── GivePickaxeCommand.php
+        │   └── SetMiningModeCommand.php
+        ├── model/
+            └── MiningPattern.php
 
 ```
 
@@ -155,5 +158,6 @@ For issues or suggestions, contact Phoenix4041 or visit the GitHub repository.
 | --- | --- | --- | --- |
 | 2.0.0 | December 2025 | 🟢 Active | Full support |
 | 1.1.0 | October 2024 | 🔴 Legacy | No support |
+
 
 **Made with ❤️ by Phoenix4041**
