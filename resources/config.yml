@@ -1,0 +1,148 @@
+#    ▄███████▄  ▄██████▄   ▄██████▄     ▄████████    ▄███████▄  ▄█   ▄████████    ▄█   ▄█▄    ▄████████ ▀████    ▐████▀    ▄████████
+#   ███    ███ ███    ███ ███    ███   ███    ███   ███    ███ ███  ███    ███   ███ ▄███▀   ███    ███   ███▌   ████▀    ███    ███
+#   ███    ███ ███    ███ ███    ███   ███    ███   ███    ███ ███▌ ███    █▀    ███▐██▀     ███    ███    ███  ▐███      ███    █▀
+#   ███    ███ ███    ███ ███    ███  ▄███▄▄▄▄██▀  ▀█████████▀  ███▌ ███         ▄█████▀      ███    ███    ▀███▄███▀     ▄███▄▄▄
+# ▀█████████▀  ███    ███ ███    ███ ▀▀███▀▀▀▀▀     ███        ███▌ ███        ▀▀█████▄    ▀███████████    ████▀██▄     ▀▀███▀▀▀
+#   ███        ███    ███ ███    ███ ▀███████████   ███        ███  ███    █▄    ███▐██▄     ███    ███   ▐███  ▀███      ███    █▄
+#   ███        ███    ███ ███    ███   ███    ███   ███        ███  ███    ███   ███ ▀███▄   ███    ███  ▄███     ███▄    ███    ███
+#  ▄████▀       ▀██████▀   ▀██████▀    ███    ███  ▄████▀      █▀   ████████▀    ███   ▀█▀   ███    █▀  ████       ███▄   ██████████
+#                                       ███    ███                                 ▀
+#
+# PoorPickaxe - Advanced Multi-Block Mining Tool
+# Refactored and Enhanced by AI Assistant
+
+# === GENERAL SETTINGS ===
+
+# Enable development mode for debugging information
+development-mode: false
+
+# Default mining mode when a player first uses the pickaxe
+default-mining-mode: tunnel
+
+# === ITEM PROPERTIES ===
+
+# Durability of the pickaxe (in uses)
+durability: 100
+
+# Mining efficiency (affects mining speed)
+mining-efficiency: 10
+
+# Item display name
+# Use {MODE} to display the current mining mode
+item-name: "&l&9PoorPickaxe &7({MODE})"
+
+# Item lore (description)
+# Use {MODE} for mode name, {DESCRIPTION} for mode description
+item-lore:
+  - " "
+  - "&7Mode: &b{MODE}"
+  - "&7{DESCRIPTION}"
+  - " "
+  - "&eFind this pickaxe in the Black Market!"
+
+# === MINING PATTERNS ===
+# Define different mining patterns with custom sizes
+# width/height/depth define the radius in each direction
+# A value of 1 means 3 blocks total (center + 1 on each side)
+
+mining-patterns:
+  single:
+    display-name: "Single Block"
+    width: 0
+    height: 0
+    depth: 0
+    description: "Mines only the block you hit"
+
+  2x2:
+    display-name: "2x2 Area"
+    width: 0
+    height: 0
+    depth: 0
+    description: "Mines exactly 4 blocks in a 2x2 pattern"
+
+  cube:
+    display-name: "3x3x3 Cube"
+    width: 1
+    height: 1
+    depth: 1
+    description: "Mines a 3x3x3 cube around the block"
+
+  tunnel:
+    display-name: "3x3 Tunnel"
+    width: 1
+    height: 1
+    depth: 0
+    description: "Mines a 3x3 horizontal tunnel"
+
+  vein:
+    display-name: "Vein Miner"
+    width: 2
+    height: 2
+    depth: 2
+    description: "Mines connected blocks of the same type"
+
+  large_cube:
+    display-name: "5x5x5 Cube"
+    width: 2
+    height: 2
+    depth: 2
+    description: "Mines a large 5x5x5 cube"
+
+  strip:
+    display-name: "Strip Mining"
+    width: 0
+    height: 0
+    depth: 3
+    description: "Mines forward in a line (1x1x7)"
+
+  wide_tunnel:
+    display-name: "Wide Tunnel"
+    width: 2
+    height: 1
+    depth: 0
+    description: "Mines a wide 5x3 horizontal tunnel"
+
+  vertical_shaft:
+    display-name: "Vertical Shaft"
+    width: 1
+    height: 3
+    depth: 1
+    description: "Mines a vertical 3x3x7 shaft"
+
+# === MINING BEHAVIOR ===
+
+# Maximum number of blocks that can be broken at once
+max-blocks-per-break: 125
+
+# Enable vein mining (mines connected blocks of same type)
+enable-vein-miner: true
+
+# Delay between breaking block groups (in ticks, 20 ticks = 1 second)
+# Set to 0 for instant breaking (may cause lag with large areas)
+break-delay-ticks: 0
+
+# Should broken blocks drop items?
+drop-items: true
+
+# Should mining consume hunger?
+consume-hunger: true
+
+# Hunger consumption multiplier (1.0 = normal, 2.0 = double hunger loss)
+hunger-multiplier: 3.0
+
+# === BLOCK SETTINGS ===
+
+# Blocks that should be ignored and not broken by the pickaxe
+# Add full class names here
+ignored-blocks:
+  - "pocketmine\\block\\Chest"
+  - "pocketmine\\block\\EnderChest"
+  - "pocketmine\\block\\ShulkerBox"
+  - "pocketmine\\block\\Barrel"
+  - "pocketmine\\block\\Furnace"
+  - "pocketmine\\block\\BlastFurnace"
+  - "pocketmine\\block\\Smoker"
+  - "pocketmine\\block\\Hopper"
+  - "pocketmine\\block\\Dropper"
+  - "pocketmine\\block\\Dispenser"
+  - "pocketmine\\block\\Bedrock"

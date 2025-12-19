@@ -1,0 +1,21 @@
+name: PoorPickaxe
+main: PoorPickaxe\Loader
+version: 2.0.0
+api: 5.0.0
+author: Phoenix4041
+description: Advanced multi-block mining pickaxe with configurable patterns
+website: https://github.com/Phoenix4041/PoorPickaxe
+
+depend:
+  - Customies
+
+permissions:
+  poorpickaxe.command.give:
+    description: Allows giving pickaxes to players
+    default: op
+  poorpickaxe.command.setmode:
+    description: Allows changing mining mode
+    default: true
+  poorpickaxe.use:
+    description: Allows using the PoorPickaxe
+    default: true
